@@ -47,18 +47,14 @@ OPENCODE_CONFIG_FILE=/path/to/opencode.json ./install.sh
 ## Run
 
 ```bash
-export HOOKBUS_URL=http://localhost:18800/event
-export HOOKBUS_TOKEN=<token>
 opencode-agenthook run -m kimi-coding/kimi-for-coding --thinking "Reply OK"
 ```
 
-Any OpenCode arguments after `run` are passed through.
+Any OpenCode arguments after `run` are passed through. The wrapper reads HookBus settings from `~/.local/share/opencode-agenthook/hookbus.env`, written by the installer.
 
 For normal user testing, launch OpenCode normally after install:
 
 ```bash
-export HOOKBUS_URL=http://localhost:18800/event
-export HOOKBUS_TOKEN=<token>
 opencode
 ```
 
@@ -91,7 +87,7 @@ npm test
 
 ## Security
 
-No secrets are stored by this publisher. It reads `HOOKBUS_TOKEN` from the environment and sends it as a bearer token to HookBus.
+The installer stores the HookBus bearer token in `~/.local/share/opencode-agenthook/hookbus.env` with user-only permissions. The publisher sends that token only as a bearer token to HookBus.
 
 Do not commit `.env` files, HookBus bearer tokens, model provider keys, private hostnames, or logs containing prompts.
 
