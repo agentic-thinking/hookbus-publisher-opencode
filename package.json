@@ -1,0 +1,33 @@
+{
+  "name": "@agenticthinking/hookbus-publisher-opencode",
+  "version": "0.1.0",
+  "description": "OpenCode publisher for HookBus runtime evidence.",
+  "type": "module",
+  "bin": {
+    "opencode-agenthook": "./bin/opencode-agenthook.js"
+  },
+  "exports": {
+    "./server": "./plugin/server.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "keywords": [
+    "hookbus",
+    "agenthook",
+    "opencode",
+    "ai-agents",
+    "governance",
+    "runtime-evidence"
+  ],
+  "author": "Agentic Thinking Limited <contact@agenticthinking.uk>",
+  "homepage": "https://agenticthinking.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentic-thinking/hookbus-publisher-opencode.git"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

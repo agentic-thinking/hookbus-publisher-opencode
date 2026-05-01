@@ -1,0 +1,48 @@
+{
+  "schema": "https://agenthook.org/schemas/publisher-manifest.v1.json",
+  "schema_version": "1.0",
+  "publisher_id": "uk.agenticthinking.publisher.opencode",
+  "display_name": "HookBus Publisher for OpenCode",
+  "maintainer": {
+    "name": "Agentic Thinking Limited",
+    "url": "https://agenticthinking.uk"
+  },
+  "runtime": {
+    "vendor": "OpenCode",
+    "name": "OpenCode CLI",
+    "versions_tested": ["1.2.26"]
+  },
+  "agenthook": {
+    "version": "0.1",
+    "source": "opencode-agenthook",
+    "events": {
+      "SessionStart": "supported",
+      "UserPromptSubmit": "supported",
+      "PreLLMCall": "supported",
+      "PostLLMCall": "supported",
+      "PreToolUse": "supported",
+      "PostToolUse": "supported",
+      "ModelResponse": "supported",
+      "SessionEnd": "supported",
+      "AgentHandoff": "partial",
+      "ErrorOccurred": "supported"
+    }
+  },
+  "entrypoints": {
+    "command": "bin/opencode-agenthook.js",
+    "plugin": "plugin/server.js"
+  },
+  "config": {
+    "environment": ["HOOKBUS_URL", "HOOKBUS_TOKEN", "HOOKBUS_SOURCE", "HOOKBUS_FAIL_MODE"]
+  },
+  "limitations": [
+    "The wrapper and server plugin must both be installed for the broadest event coverage.",
+    "Reasoning capture depends on running OpenCode with `--thinking` and a model/provider that exposes reasoning."
+  ],
+  "verification": {
+    "self_attested": true,
+    "conformance": "prototype",
+    "last_tested": "2026-05-01",
+    "commands": ["npm test", "opencode-agenthook run --thinking <prompt>"]
+  }
+}
