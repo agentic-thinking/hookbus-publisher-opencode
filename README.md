@@ -11,7 +11,7 @@ This publisher has two parts:
 
 Usable publisher, tested against OpenCode `1.2.26`.
 
-OpenCode is Gold-capable based on source audit. This package includes the native plugin path needed for the normal OpenCode user experience. Formal conformance still depends on running the AgentHook conformance suite against a configured OpenCode installation.
+OpenCode is Silver-capable on its documented hook surface; Gold is unproven because retry correlation is not documented (see the dated [runtime audit](https://agenthook.org/runtimes/), 25 September 2026). This package includes the native plugin path needed for the normal OpenCode user experience. Formal conformance still depends on running the AgentHook conformance suite against a configured OpenCode installation.
 
 ## Coverage
 
